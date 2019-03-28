@@ -4,18 +4,20 @@ var app = new Vue({
 		product: 'Socks',
 		brand: "Vue Mastery",
 		selectedVariant: 0,
-		inStock: true,
 		details: ["80% cotton", "20% poyester", "Gender-neutral"],
 		variants: [
 		{
 			variantId: 2234,
 			variantImage: "images/vmSocks-green-onWhite.jpg",
-			variantColor: "green"
+			variantColor: "green",
+			variantQuantity: 10
 		},
 		{
 			variantId: 2235,
 			variantImage: "images/vmSocks-blue-onWhite.jpg",
-			variantColor: "blue"
+			variantColor: "blue",
+			variantQuantity: 0
+
 		}
 		],
 		cart: 0
@@ -40,6 +42,10 @@ var app = new Vue({
 
 		image() {
 			return this.variants[this.selectedVariant].variantImage
+		},
+
+		inStock() {
+			return this.variants[this.selectedVariant].variantQuantity
 		}
 	}
 
