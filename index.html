@@ -3,10 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Product App</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<div class="nav-bar"></div>
+
 	<div id="app">
-		<h1>{{ product }}</h1>
+		<div class="product">
+			<div class="product-image">
+				<img v-bind:src="image" alt="">
+			</div>
+			<div class="product-info">
+				<h1>{{ product }}</h1>
+			</div>
+		</div>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
