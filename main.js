@@ -8,12 +8,12 @@ var app = new Vue({
 		variants: [
 		{
 			variantId: 2234,
-			variantImage: "images/vmSocks-blue-onWhite.jpg",
+			variantImage: "images/vmSocks-green-onWhite.jpg",
 			variantColor: "green"
 		},
 		{
 			variantId: 2235,
-			variantImage: "images/vmSocks-green-onWhite.jpg",
+			variantImage: "images/vmSocks-blue-onWhite.jpg",
 			variantColor: "blue"
 		}
 		],
