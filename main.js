@@ -36,6 +36,19 @@ Vue.component('product', {
 				
 				
 			</div>
+			<div>
+				<h2>Reviews</h2>
+				<p v-if="!reviews.length">There are no reviews yet.</p>
+				
+				<ul>
+					<li v-for="review in reviews"> 
+						<p>{{review.name}}</p>
+						<p>Rating: {{review.rating}}</p>
+						<p>{{review.review}}</p>
+					</li>
+					
+				</ul>
+			</div>
 			<product-review @review-submitted="addReview"></product-review>
 		</div>
 	`,
@@ -133,8 +146,6 @@ Vue.component('product-review', {
 		<p>
 			<input type="submit" value="Submit">
 		</p>
-
-
 	`,
 	data() {
 		return {
@@ -152,7 +163,8 @@ Vue.component('product-review', {
 			}
 
 			//send to parent component
-			this.$emit("review-submitted", productReview)
+			this.$emit("review-submitted", productReview);
+
 			this.name=null
 			this.review=null
 			this.rating=null
