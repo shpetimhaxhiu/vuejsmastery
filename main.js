@@ -1,4 +1,5 @@
 
+Vue.config.devtools = true;
 Vue.component('product', {
 	props: {
 		premium: {
@@ -33,9 +34,7 @@ Vue.component('product', {
 						:disable="!inStock"
 						:class="{ disabledButton: !inStock }">Add to cart</button>
 				
-				<div class="cart">
-					<p>Cart({{cart}})</p>
-				</div>
+				
 			</div>
 		</div>
 	`,
@@ -60,13 +59,12 @@ Vue.component('product', {
 
 				}
 			],
-			cart: 0
 		}
 	},
 
 	methods: {
 		addToCart: function() {
-			this.cart+=1
+			this.$emit('add-to-cart');
 		},
 
 		updateProduct: function(index) {
@@ -103,6 +101,13 @@ Vue.component('product', {
 var app = new Vue({
 	el: '#app',
 	data: {
-		premium: false
+		premium: false,
+		cart: 0
+
+	},
+	methods: {
+		updateCart() {
+			this.cart += 1;
+		}
 	}
 });
